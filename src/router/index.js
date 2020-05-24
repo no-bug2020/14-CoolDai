@@ -52,6 +52,4 @@ router.beforeEach((to,from ,next) => {
         next({Login});
     }
 });
-
-
 export default router
