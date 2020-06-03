@@ -10,6 +10,7 @@ import Case from '../views/Case.vue';
 import Product from '../views/Product.vue';
 import Transaction from '../views/Transaction.vue';
 import Register from '../views/Register.vue';
+import Release from '../views/Release.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -20,7 +21,13 @@ const routes = [{
 	path: '/publish',
 	name: 'Publish',
 	component: Publish,
-},{
+},
+{
+	path: '/publish/:type/release',
+	name: 'Release',
+	component: Release,
+},
+{
 	path:'/login',
 	name:'Login',
 	component:Login
