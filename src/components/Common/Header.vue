@@ -1,32 +1,43 @@
 <template>
 	<div>
-		<b-navbar toggleable="lg" type="dark" variant="secondary">
-			<b-navbar-brand @click="navigate('/')" style="align-content: end;">
+		<b-navbar toggleable="lg" class="azure">
+			<b-navbar-brand @click="navigate('/')" style="align-content: end;color:white;">
 				<img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten" />
 				酷代
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-			<b-collapse id="nav-collapse" is-nav class="ml-auto">
-				<b-nav-form class="ml-auto">
-					<b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>
-					<b-button variant="outline-dark" class="my-2 my-sm-0" type="submit">搜索</b-button>
-				</b-nav-form>
+			<b-collapse id="nav-collapse" is-nav>
 
-				<b-navbar-nav v-for="(nav, index) in navs" :key="index">
-					<b-nav-item href="#" @click="navigate(`${nav.url}`)">{{ nav.name }}</b-nav-item>
-				</b-navbar-nav>
+				<ul class="nav navbar-nav" v-for="(nav, index) in navs" :key="index">
+      				<li class="nav-item">
+        				<a class="nav-link" style="color:white;" @click="navigate(`${nav.url}`)">{{ nav.name }}</a>
+      				</li>
+				</ul>
+				<div class="ml-auto">
+					<form class="form-inline my-2 my-lg-0">
+      					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      					<!-- <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button> -->
+    				</form>
+				</div>
+				
+				<template v-if="$store.state.token === ''">
+					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="index">
+      					<li class="nav-item">
+        					<a class="nav-link" style="color:white;" href="#" @click="navigate(`${l.url}`)">{{ l.name }}</a>
+      					</li>
+					</ul>
+				</template>
 
-				<b-navbar-nav class="ml-auto" v-if="$store.state.token === ''">
-					<b-navbar-nav v-for="(l, index) in login" :key="index">
-						<b-nav-item href="#" @click="navigate(`${l.url}`)">{{ l.name }}</b-nav-item>
-					</b-navbar-nav>
-				</b-navbar-nav>
-				<b-navbar-nav class="ml-auto" v-if="$store.state.token !== ''">
-					<b-navbar-nav>
-						<b-nav-item href="#">个人中心</b-nav-item>
-						<b-nav-item href="#" @click="logout">注销</b-nav-item>
-					</b-navbar-nav>
-				</b-navbar-nav>
+				<template v-if="$store.state.token !== ''">
+					<ul class="nav navbar-nav">
+      					<li class="nav-item">
+        					<a class="nav-link" style="color:white;" href="#">个人中心</a>
+      					</li>
+						<li class="nav-item">
+        					<a class="nav-link" style="color:white;" href="#" @click="logout">注销</a>
+      					</li>
+					</ul>
+				</template>
 			</b-collapse>
 		</b-navbar>
 	</div>
@@ -43,7 +54,7 @@ export default {
 				{ name: '案例库', url: '/', icon: 'logo-octocat' },
 				{ name: '产品服务', url: '/', icon: 'logo-usd' },
 				{ name: '交易中心', url: '/', icon: 'md-chatboxes' },
-				{ name: '关于我们', url: '/', icon: 'md-beer' }
+				// { name: '关于我们', url: '/', icon: 'md-beer' }
 			],
 			login: [{ name: '登陆', url: '/login' }, { name: '注册', url: '/register' }]
 		};
@@ -77,5 +88,8 @@ body {
 .image {
 	width: 35px;
 	height: 35px;
+}
+.azure {
+    background-image: linear-gradient(-90deg, #29bdd9 0%, #276ace 100%);
 }
 </style>
