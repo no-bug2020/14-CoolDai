@@ -2,7 +2,7 @@
 	<div>
 		<b-navbar toggleable="lg" class="azure">
 			<b-navbar-brand @click="navigate('/')" style="align-content: end;color:white;">
-				<img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten" />
+				<img src="https://i.loli.net/2020/06/14/RTodKizJa8FHWwY.png" width="30" height="30" class="d-inline-block align-top" alt="Kitten" />
 				酷代
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -21,7 +21,7 @@
 				</div>
 				
 				<template v-if="$store.state.token === ''">
-					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="index">
+					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="'info-'+index">
       					<li class="nav-item">
         					<a class="nav-link" style="color:white;" href="#" @click="navigate(`${l.url}`)">{{ l.name }}</a>
       					</li>
