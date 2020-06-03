@@ -12,7 +12,6 @@ import Product from '../views/Product.vue';
 import Transaction from '../views/Transaction.vue';
 import Register from '../views/Register.vue';
 import Release from '../views/Release.vue'
-import Test from '../views/Test.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -61,11 +60,7 @@ const routes = [{
 	path:'/register',
 	name:'Register',
 	component:Register
-},{
-	path:'/test',
-	name:'Test',
-	component:Test
-},
+}
 
 ];
 
