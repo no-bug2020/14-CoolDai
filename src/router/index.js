@@ -4,6 +4,12 @@ import store from '../store'
 import Index from '../views/Index.vue'
 import Login from '../views/Login.vue'
 import Publish from '../views/Publish.vue';
+import Task from '../views/Task.vue';
+import Recommend from '../views/Recommend.vue';
+import Case from '../views/Case.vue';
+import Product from '../views/Product.vue';
+import Transaction from '../views/Transaction.vue';
+import Register from '../views/Register.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -18,6 +24,30 @@ const routes = [{
 	path:'/login',
 	name:'Login',
 	component:Login
+},{
+	path:'/task',
+	name:'Task',
+	component:Task
+},{
+	path:'/recommend',
+	name:'Recommend',
+	component:Recommend
+},{
+	path:'/case',
+	name:'Case',
+	component:Case
+},{
+	path:'/product',
+	name:'Product',
+	component:Product
+},{
+	path:'/transaction',
+	name:'Transaction',
+	component:Transaction
+},{
+	path:'/register',
+	name:'Register',
+	component:Register
 },
 
 ];
