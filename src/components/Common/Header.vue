@@ -21,7 +21,7 @@
 				</div>
 				
 				<template v-if="$store.state.token === ''">
-					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="'item'+index">
+					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="'info-'+index">
       					<li class="nav-item">
         					<a class="nav-link" style="color:white;" href="#" @click="navigate(`${l.url}`)">{{ l.name }}</a>
       					</li>
