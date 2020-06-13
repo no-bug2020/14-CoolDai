@@ -2,7 +2,7 @@
 	<div>
 		<b-navbar toggleable="lg" class="azure">
 			<b-navbar-brand @click="navigate('/')" style="align-content: end;color:white;">
-				<img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten" />
+				<img src="../../../public/logo.png" style="width:auto;height:30px" class="d-inline-block align-top" alt="CoolDai" />
 				酷代
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -21,7 +21,7 @@
 				</div>
 				
 				<template v-if="$store.state.token === ''">
-					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="index">
+					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="'item'+index">
       					<li class="nav-item">
         					<a class="nav-link" style="color:white;" href="#" @click="navigate(`${l.url}`)">{{ l.name }}</a>
       					</li>
@@ -91,6 +91,7 @@ body {
 	height: 35px;
 }
 .azure {
-    background-image: linear-gradient(-90deg, #29bdd9 0%, #276ace 100%);
+    /* background-image: linear-gradient(-90deg, #29bdd9 0%, #276ace 100%); */
+	background-color: #5073D9;
 }
 </style>
