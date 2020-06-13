@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '../store'
 import Index from '../views/Index.vue'
+import Feedback from '../views/Feedback.vue'
 import Login from '../views/Login.vue'
 import Publish from '../views/Publish.vue';
 import Task from '../views/Task.vue';
@@ -18,7 +19,11 @@ const routes = [{
 	path: '/',
 	name: 'Index',
 	component: Index,
-}, {
+},{
+	path: '/feedback',
+	name: 'Feedback',
+	component: Feedback,
+},{
 	path: '/publish',
 	name: 'Publish',
 	component: Publish,
