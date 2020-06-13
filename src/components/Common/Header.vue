@@ -2,7 +2,7 @@
 	<div>
 		<b-navbar toggleable="lg" class="azure">
 			<b-navbar-brand @click="navigate('/')" style="align-content: end;color:white;">
-				<img src="https://i.loli.net/2020/06/14/RTodKizJa8FHWwY.png" width="30" height="30" class="d-inline-block align-top" alt="Kitten" />
+				<img src="../../../public/logo.png" style="width:auto;height:30px" class="d-inline-block align-top" alt="CoolDai" />
 				酷代
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -91,6 +91,7 @@ body {
 	height: 35px;
 }
 .azure {
-    background-image: linear-gradient(-90deg, #29bdd9 0%, #276ace 100%);
+    /* background-image: linear-gradient(-90deg, #29bdd9 0%, #276ace 100%); */
+	background-color: #5073D9;
 }
 </style>
