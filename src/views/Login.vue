@@ -1,17 +1,20 @@
 <template>
-	<div style="margin-top:1em;">
-		<el-row>
-			<el-col :span="8" :offset="8">
+	<div style="margin-top:1em;min-height: 630px;">
+		<b-row>
+			<b-col xs="10" offset-xs="1" sm="10" offset-sm="1" md="8" offset-md="2" lg="6" offset-lg="3" xl="4" offset-xl="4">
 				<el-card class="box-card">
-					<div slot="header" class="clearfix"><span>登录</span></div>
-					<el-form :model="ruleForm" status-icon ref="ruleForm" label-width="100px" class="demo-ruleForm">
-						<el-form-item label="用户名" prop="username"><el-input type="text" v-model="ruleForm.username" autocomplete="off"></el-input></el-form-item>
-						<el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input></el-form-item>
-						<el-form-item><el-button type="primary" @click="submitForm('ruleForm')">提交</el-button></el-form-item>
+					<div slot="header" class="clearfix" align="center" style="font-size: 24px;"><span><b>登录</b></span></div>
+					<el-form :model="ruleForm" status-icon ref="ruleForm" label-width="100px" class="demo-ruleForm" style="width: 85%;">
+						<el-form-item label="手机号" prop="phone" :rules="[{ required: true, message: '手机号不能为空' }]">
+							<el-input type="text" v-model="ruleForm.phone" autocomplete="off"></el-input>
+						</el-form-item>
+						<el-form-item label="验证码" prop="validate" :rules="[{min: 6, max: 6, message: '验证码为6个数字'},{ required: true, message: '验证码不能为空' }]"><el-input type="text" v-model="ruleForm.validate" autocomplete="off"></el-input></el-form-item>
+						<el-form-item label="密码" prop="password" :rules="[{min: 8, max: 16, message: '密码长度在8到16个字符'},{ required: true, message: '密码不能为空' }]"><el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input></el-form-item>
+						<el-form-item style="text-align: center;"><el-button type="primary" @click="submitForm('ruleForm')" style="width: 50%;">登录</el-button></el-form-item>
 					</el-form>
 				</el-card>
-			</el-col>
-		</el-row>
+			</b-col>
+		</b-row>
 	</div>
 </template>
 
@@ -21,7 +24,8 @@ export default {
 	data() {
 		return {
 			ruleForm: {
-				username: '',
+				phone: '',
+				validate: '',
 				password: ''
 			}
 		};
