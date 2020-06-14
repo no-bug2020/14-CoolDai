@@ -5,7 +5,7 @@
 		    <b-col md="10" offset-md="1" style="height: auto;">
 				  <b-row class="mt-1em">
 				    <b-col md="3" class="logo" style="display: flex;flex-direction: row;align-items: center;">
-						<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2164552727,1674393781&fm=26&gp=0.jpg" alt="" style="width: 60px; height: 60px;">
+						<img src="../../../public/logo.png" alt="" style="width: 80px; height: 60px;">
 						<div>酷代</div>
 					</b-col>
 				    <b-col md="9" class="list">
