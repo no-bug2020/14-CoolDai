@@ -1,7 +1,7 @@
 <template>
 <div>
-    <div class="container" style="padding:40px;">
-        <el-card class="box-card" style="margin-top:40px;">
+    <div class="container" style="padding:2em;">
+        <el-card class="box-card">
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 
@@ -82,7 +82,13 @@ export default {
       onSubmit() {
         console.log('submit!');
       }
-    }
+    },
+    mounted() {
+		document.querySelector('body').setAttribute('style', 'background-color:#f8f8f8');
+	},
+	beforeDestroy() {
+		document.querySelector('body').removeAttribute('style');
+	}
   }
 </script>
 
