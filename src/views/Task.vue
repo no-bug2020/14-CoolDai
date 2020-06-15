@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="container">
-      <div class="row" style="margin-top:40px;">
+    <div class="container" style="padding:2em">
+      <div class="row">
         <div class="col-md-12 col-sm-12">
           <el-card class="box-card" shadow="hover">
             <div slot="header" class="clearfix" style="text-align:center;">
@@ -677,7 +677,7 @@
         </div>
       </div>
 
-	  <div class="row" style="margin-top:20px;margin-bottom:20px;">
+	  <div class="row" style="margin-top:2em;">
 		  	<div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
             	<el-button type="primary" @click="submitAll()">申请签约开发者</el-button>
         	</div>
