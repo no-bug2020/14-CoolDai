@@ -161,7 +161,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .first img {
   width: 90%;
   height: auto;
