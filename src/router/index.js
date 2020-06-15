@@ -6,6 +6,7 @@ import Feedback from '../views/Feedback.vue'
 import Login from '../views/Login.vue'
 import Publish from '../views/Publish.vue';
 import Task from '../views/Task.vue';
+import Certification from '../views/Certification.vue';
 import Recommend from '../views/Recommend.vue';
 import Case from '../views/Case.vue';
 import Product from '../views/Product.vue';
@@ -41,6 +42,10 @@ const routes = [{
 	name:'Task',
 	component:Task
 },{
+	path:'/task/certification',
+	name:'Certification',
+	component:Certification
+},{
 	path:'/recommend',
 	name:'Recommend',
 	component:Recommend
@@ -60,7 +65,7 @@ const routes = [{
 	path:'/register',
 	name:'Register',
 	component:Register
-},
+}
 
 ];
 
