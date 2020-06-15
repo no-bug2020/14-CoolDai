@@ -225,6 +225,10 @@ export default {
   height: auto;
 }
 
+.hover{
+  height: 400px;
+}
+
 .hover:hover {
   background-color: #5073ea;
 }
@@ -243,6 +247,7 @@ export default {
 
 .block {
   background-color: #f8f9fa;
+  padding-bottom: 40px;
 }
 .el-carousel__item h3 {
   color: #f8f8f8;
