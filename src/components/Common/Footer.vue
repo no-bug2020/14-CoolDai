@@ -33,10 +33,10 @@
 					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">帮助</b-col>
 					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">关于我们</b-col>
 					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">合作伙伴</b-col>
-					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">意见反馈</b-col>
+					  <b-col xs='3' sm='3' md="2" lg="2" xl="2"><a href="/feedback" target="_blank" style="color:black;">意见反馈</a></b-col>
 				      <b-col xs='4' offset-xs="4" sm='5' offset-sm="3" md="3" offset-md="1" lg="2" xl="2" class="text-12px" align="right">
 						  <div>津ICP00000000号</div>
-						  <div><img src="https://stacdn.proginn.com/image/common/badge.png" alt="" width="20" height="20">津公网安备 00000000000000号</div>
+						  <div><img src="https://stacdn.proginn.com/image/common/badge.png" alt="" style="width:20px;height:20px;">津公网安备 00000000000000号</div>
 						  </b-col>
 				    </b-row>
 			</b-col>
@@ -50,7 +50,6 @@
 <style scoped> 
 	.footer{
 		width: 100%;
-		margin-top: 2em;
 		background-color: white;
 	}
 	.flex-row{

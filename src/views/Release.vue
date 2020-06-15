@@ -291,7 +291,7 @@ export default {
 
 <style>
 .mt-1em {
-	margin: 1em;
+	margin: 2em;
 }
 .icon-card {
 	width: 130px;
