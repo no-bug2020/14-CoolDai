@@ -13,6 +13,8 @@ import Product from '../views/Product.vue';
 import Register from '../views/Register.vue';
 import Release from '../views/Release.vue';
 import User from '../views/User.vue';
+import ProgrammerList from '../views/ProgrammerList.vue';
+import ProgrammerInfo from '../views/ProgrammerInfo.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -65,7 +67,15 @@ const routes = [{
 	path:'/user',
 	name:'User',
 	component:User
-},
+},{
+	path:'/programmer',
+	name:'ProgrammerList',
+	component:ProgrammerList
+},{
+	path:'/programmer/info',
+	name:'ProgrammerInfo',
+	component:ProgrammerInfo
+}
 
 ];
 
