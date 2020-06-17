@@ -4,7 +4,7 @@
       <div class="row" style="margin-top:2em;margin-bottom:2em;">
         <div class="col-md-3">
           <el-aside width="100%" style="background-color: white">
-            <el-menu :default-openeds="['1','2','3']" default-active="1-1" style="position:fixed">
+            <el-menu :default-openeds="['1','2','3']" default-active="1-1">
               <el-submenu index="1">
                 <template slot="title" @click="choose(1,'1')"  >欢迎</template>
             
