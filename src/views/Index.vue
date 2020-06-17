@@ -82,7 +82,7 @@
         <div class="col-md-3">
           <el-card shadow="hover">
             <p class="logoGroup">
-              <img src="../assets/images/logo.png" >x
+              <img src="../../public/logo.png" >x
               <img src="../assets/images/huawei.jpg" >
               <br />
               <br />
@@ -99,7 +99,7 @@
           <el-card shadow="hover">
 
 			<p class="logoGroup">
-              <img src="../assets/images/logo.png" >x
+              <img src="../../public/logo.png" >x
               <img src="../assets/images/bm.jpg" >
               <br />
               <br />
@@ -116,7 +116,7 @@
           <el-card shadow="hover">
 
 			<p class="logoGroup">
-              <img src="../assets/images/logo.png" >x
+              <img src="../../public/logo.png" >x
               <img src="../assets/images/zw.jpg" >
               <br />
               <br />

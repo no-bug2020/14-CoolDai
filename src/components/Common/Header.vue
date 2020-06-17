@@ -51,10 +51,8 @@ export default {
 			navs: [
 				{ name: '需求发布', url: '/publish', icon: 'ios-book' },
 				{ name: '签约接单', url: '/task' ,icon:'ios-book'},
-				{ name: '官方推荐', url: '/recommend', icon: 'ios-book' },
 				{ name: '接单人员', url: '/programmer', icon: 'ios-book'},
 				{ name: '案例库', url: '/case', icon: 'logo-octocat' },
-				{ name: '产品服务', url: '/product', icon: 'logo-usd' }
 				// { name: '关于我们', url: '/', icon: 'md-beer' }
 			],
 			login: [{ name: '登录', url: '/login' }, { name: '注册', url: '/register' }]
