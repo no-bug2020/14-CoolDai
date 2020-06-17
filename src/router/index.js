@@ -9,7 +9,7 @@ import Task from '../views/Task.vue';
 import Certification from '../views/Certification.vue';
 import Recommend from '../views/Recommend.vue';
 import Case from '../views/Case.vue';
-import Product from '../views/Product.vue';
+import CaseInfo from '../views/CaseInfo.vue';
 import Register from '../views/Register.vue';
 import Release from '../views/Release.vue'
 import HelpDocument from '../views/HelpDocument.vue';
@@ -57,9 +57,9 @@ const routes = [{
 	name:'Case',
 	component:Case
 },{
-	path:'/product',
-	name:'Product',
-	component:Product
+	path:'/case/info',
+	name:'CaseInfo',
+	component:CaseInfo
 },{
 	path:'/register',
 	name:'Register',
