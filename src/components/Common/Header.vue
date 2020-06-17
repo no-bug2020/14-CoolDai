@@ -53,8 +53,7 @@ export default {
 				{ name: '签约接单', url: '/task' ,icon:'ios-book'},
 				{ name: '官方推荐', url: '/recommend', icon: 'ios-book' },
 				{ name: '案例库', url: '/case', icon: 'logo-octocat' },
-				{ name: '产品服务', url: '/product', icon: 'logo-usd' },
-				{ name: '交易中心', url: '/transaction', icon: 'md-chatboxes' },
+				{ name: '产品服务', url: '/product', icon: 'logo-usd' }
 				// { name: '关于我们', url: '/', icon: 'md-beer' }
 			],
 			login: [{ name: '登录', url: '/login' }, { name: '注册', url: '/register' }]
