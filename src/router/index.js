@@ -13,7 +13,7 @@ import Product from '../views/Product.vue';
 import Transaction from '../views/Transaction.vue';
 import Register from '../views/Register.vue';
 import Release from '../views/Release.vue'
-import Test from '../views/Test.vue'
+import HelpDocument from '../views/HelpDocument.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -67,9 +67,9 @@ const routes = [{
 	name:'Register',
 	component:Register
 },{
-	path:'/test',
-	name:'Test',
-	component:Test
+	path:'/helpdoc',
+	name:'HelpDocument',
+	component:HelpDocument
 },
 
 ];
