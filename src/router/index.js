@@ -10,10 +10,10 @@ import Certification from '../views/Certification.vue';
 import Recommend from '../views/Recommend.vue';
 import Case from '../views/Case.vue';
 import Product from '../views/Product.vue';
-import Transaction from '../views/Transaction.vue';
 import Register from '../views/Register.vue';
 import Release from '../views/Release.vue'
 import HelpDocument from '../views/HelpDocument.vue';
+import User from '../views/User.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -59,10 +59,6 @@ const routes = [{
 	name:'Product',
 	component:Product
 },{
-	path:'/transaction',
-	name:'Transaction',
-	component:Transaction
-},{
 	path:'/register',
 	name:'Register',
 	component:Register
@@ -70,6 +66,10 @@ const routes = [{
 	path:'/helpdoc',
 	name:'HelpDocument',
 	component:HelpDocument
+},{
+	path:'/user',
+	name:'User',
+	component:User
 },
 
 ];
