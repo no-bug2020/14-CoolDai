@@ -5,7 +5,7 @@
 		    <b-col md="10" offset-md="1" style="height: auto;">
 				  <b-row class="mt-1em">
 				    <b-col md="3" class="logo" style="display: flex;flex-direction: row;align-items: center;">
-						<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2164552727,1674393781&fm=26&gp=0.jpg" alt="" style="width: 60px; height: 60px;">
+						<img src="../../../public/logo.png" alt="" style="width: 60px; height:auto;">
 						<div>酷代</div>
 					</b-col>
 				    <b-col md="9" class="list">
@@ -30,9 +30,8 @@
 				  </b-row>
 				  <hr style="margin: 2px 0 2px 0;"/>
 				    <b-row class="mt-1em">
-					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">帮助</b-col>
-					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">关于我们</b-col>
-					  <b-col xs='3' sm='3' md="2" lg="2" xl="2">合作伙伴</b-col>
+					  <b-col xs='3' sm='3' md="2" lg="2" xl="2"><a href="/helpdoc" target="_blank" style="color:black;">帮助</a></b-col>
+					  <b-col xs='3' sm='3' md="2" lg="2" xl="2"><a href="/helpdoc#div1-1" target="_blank" style="color:black;">关于我们</a></b-col>
 					  <b-col xs='3' sm='3' md="2" lg="2" xl="2"><a href="/feedback" target="_blank" style="color:black;">意见反馈</a></b-col>
 				      <b-col xs='4' offset-xs="4" sm='5' offset-sm="3" md="3" offset-md="1" lg="2" xl="2" class="text-12px" align="right">
 						  <div>津ICP00000000号</div>

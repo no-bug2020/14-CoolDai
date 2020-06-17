@@ -11,7 +11,8 @@ import Recommend from '../views/Recommend.vue';
 import Case from '../views/Case.vue';
 import Product from '../views/Product.vue';
 import Register from '../views/Register.vue';
-import Release from '../views/Release.vue';
+import Release from '../views/Release.vue'
+import HelpDocument from '../views/HelpDocument.vue';
 import User from '../views/User.vue';
 import ProgrammerList from '../views/ProgrammerList.vue';
 import ProgrammerInfo from '../views/ProgrammerInfo.vue';
@@ -63,6 +64,11 @@ const routes = [{
 	path:'/register',
 	name:'Register',
 	component:Register
+},{
+
+	path:'/helpdoc',
+	name:'HelpDocument',
+	component:HelpDocument
 },{
 	path:'/user',
 	name:'User',
