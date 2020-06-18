@@ -6,7 +6,7 @@
           <el-card class="box-card" shadow="hover">
             <div slot="header" class="clearfix" style="text-align:center;">
               <span>完善个人简历后，才能申请签约开发者进行接单</span>
-              <el-button style="float: right; padding: 3px 0" type="text">签约规则</el-button>
+              <el-button style="float: right; padding: 3px 0" type="text" onclick="window.location.href='/helpdoc#div3-2'">签约规则</el-button>
             </div>
             <div class="text item" style="line-height:2em;">
               成为签约开发者后，才能在平台接单。

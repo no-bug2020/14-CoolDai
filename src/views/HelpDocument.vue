@@ -4,7 +4,7 @@
       <div class="row" style="margin-top:2em;margin-bottom:2em;">
         <div class="col-md-3">
           <el-aside width="100%" style="background-color: white">
-            <el-menu :default-openeds="['1','2','3']" default-active="1-1">
+            <el-menu :default-openeds="['1','2','3']" :default-active="active1">
               <el-submenu index="1">
                 <template slot="title" @click="choose(1,'1')"  >欢迎</template>
             
@@ -238,13 +238,26 @@ export default {
   name: "HelpDocument",
   data() {
     return {
-      active: "1"
+      active: "1",
+      active1: "1-1"
     };
   },
   methods: {
     choose(num,id) {
       this.active = num;
       window.location.href ="#" +id; 
+    }
+  },
+  mounted() {
+    var href = window.location.href;
+    var index=href.lastIndexOf("\#");
+    if(index != -1){
+      var active=href.substring(index+1,href.length);
+      //获取num-num
+      this.active1 = active.slice(3)
+
+      //获取num
+      this.active = this.active1.substring(0,1)
     }
   }
 };
