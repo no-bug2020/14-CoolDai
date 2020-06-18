@@ -1,24 +1,82 @@
 <template>
 	<div class="container">
-		<div class="row" style="margin-top: 2em;">
-			<div class="col-md-2 col-sm-12">
+		<div class="row">
+			<div class="col-md-2 col-sm-12" style="margin-top: 2em;">
 				<el-aside width="100%" style="background-color: white">
 					<el-menu default-active="1">
-						<el-menu-item index="1" @click="choose(1)">我的工作</el-menu-item>
+						<el-menu-item index="1" @click="choose(1)">我的</el-menu-item>
 						<el-menu-item index="2" @click="choose(2)">资金账户</el-menu-item>
 						<el-menu-item index="3" @click="choose(3)">信息设置</el-menu-item>
 					</el-menu>
 				</el-aside>
 			</div>
-			<div class="col-md-10 col-sm-12">
+			<div class="col-md-10 col-sm-12" style="margin-bottom:2em;">
 				<!--我的工作-->
-				<template v-if="active == 1">
-					我的工作
-				</template>
+				<el-tabs  v-if="active == 1" v-model="activeJob"  style="margin-top: 2em;">
+					<el-tab-pane label="我的工作" name="first">
+						<template v-for="i in 4" >
+							<el-card class="box-card" shadow="hover"  style="margin-top: 1em;">
+								<div class="row">
+									<div class="col-md-2 col-xs-12" style="text-align: center;">
+										<div class="demo-basic--circle">
+											<div class="block">
+												<el-avatar :size="100" src="#"></el-avatar>
+											</div>
+											<div class="sub-title">我的工作</div>
+										</div>
+									</div>
+									<div class="col-md-8 col-xs-12">
+										<div class="alert alert-light" role="alert">
+											<h4 class="alert-heading">项目名：人事管理系统</h4>
+											<hr>
+											<b>项目简介：</b>该管理系统的主要功能是管理员薪资料、管理员工考勤、计算员工薪资和业绩评定等。
+												大部分涉及对敏感数据修改的工作都仅由人事部完成...
+										</div>
+									</div>
+									<div class="col-md-2 col-xs-12 connect">
+										<button type="button" class="btn btn-outline-primary" style="font-size:14px;" onclick="window.location.href='/case/info'">立即联系</button>
+										<button type="button" class="btn btn-outline-primary" style="font-size:14px;" onclick="window.location.href='/case/info'">项目详情</button>
+										<!--如果没登录，链接到登录页面。登录的话跳到签约页面-->
+									</div>
+								</div>
+							</el-card>
+						</template>
+					</el-tab-pane>
+
+					<el-tab-pane label="我的发布" name="second">
+						<template v-if="active == 1" v-for="i in 4" >
+							<el-card class="box-card" shadow="hover"  style="margin-top: 1em;">
+								<div class="row">
+									<div class="col-md-2 col-xs-12" style="text-align: center;">
+										<div class="demo-basic--circle">
+											<div class="block">
+												<el-avatar :size="100" src="#"></el-avatar>
+											</div>
+											<div class="sub-title">我的发布</div>
+										</div>
+									</div>
+									<div class="col-md-8 col-xs-12">
+										<div class="alert alert-light" role="alert">
+											<h4 class="alert-heading">项目名：人事管理系统</h4>
+											<hr>
+											<b>项目简介：</b>该管理系统的主要功能是管理员薪资料、管理员工考勤、计算员工薪资和业绩评定等。
+												大部分涉及对敏感数据修改的工作都仅由人事部完成...
+										</div>
+									</div>
+									<div class="col-md-2 col-xs-12 connect">
+										<button type="button" class="btn btn-outline-primary" style="font-size:14px;" onclick="window.location.href='/case/info'">立即联系</button>
+										<button type="button" class="btn btn-outline-primary" style="font-size:14px;" onclick="window.location.href='/case/info'">项目详情</button>
+										<!--如果没登录，链接到登录页面。登录的话跳到签约页面-->
+									</div>
+								</div>
+							</el-card>
+						</template>
+					</el-tab-pane>
+				</el-tabs>
 
 				<!--资金账户-->
 				<template v-if="active == 2">
-					<div class="row" style="margin-bottom:2em;">
+					<div class="row" style="margin-top: 2em;">
 						<div class="row" style="width:100%;">
 
 							<div class="col-md-4 col-xs-12">
@@ -119,7 +177,7 @@
 
 				<!--信息设置-->
 				<template v-if="active == 3">
-					<div class="row" style="margin-bottom:2em;">
+					<div class="row" style="margin-top: 2em;">
 						<div class="row" style="width:100%;">
 							<div class="col-md-12 col-xs-12">
 								<el-tabs v-model="activeMessage">
@@ -148,8 +206,6 @@
 												<el-form-item label="职位" prop="title" :label-width="formLabelWidth">
 													<el-input v-model="userInfoForm.title" autocomplete="off"></el-input>
 												</el-form-item>
-
-											</el-form>
 
 											</el-form>
 
@@ -217,6 +273,7 @@
 			return {
 				active: 1,
 				activeMessage: 'first',
+				activeJob: 'first',
 				tableData: [{
 					num: '2020050212347',
 					date: '2020-05-02 12:00',
@@ -504,5 +561,16 @@
 	.fz-23 {
 		font-size: 30px;
 		color: dodgerblue;
+	}
+
+	.connect {
+		height: 100%;
+		line-height: 50px;
+		margin-top: 20px;;
+		text-align: center;
+		border: 1px solid #ececf6;
+		border-top: none;
+		border-bottom: none;
+		border-right: none;
 	}
 </style>
