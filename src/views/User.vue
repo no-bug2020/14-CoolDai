@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container" style="min-height: 650px;">
 		<div class="row">
 			<div class="col-md-2 col-sm-12" style="margin-top: 2em;">
 				<el-aside width="100%" style="background-color: white">

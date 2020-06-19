@@ -46,31 +46,6 @@
 						</div>
 					</div>
 					<hr>
-					<div>
-						<div class="row">
-							<div class="col-md-1">
-
-							</div>
-							<div class="col-md-1 space">
-								排序：
-							</div>
-							<div class="col-md-3 space">
-								<el-select v-model="value1" placeholder="请选择">
-									<el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value">
-									</el-option>
-								</el-select>
-							</div>
-							<div class="col-md-2 space" style="text-align: right;">
-								自由职业：
-							</div>
-							<div class="col-md-3 space">
-								<el-select v-model="value2" placeholder="请选择">
-									<el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value">
-									</el-option>
-								</el-select>
-							</div>
-						</div>
-					</div>
 					
 					<template v-for="i in 5">
 					<el-card class="box-card" style="margin-top: 20px;" shadow="hover">
