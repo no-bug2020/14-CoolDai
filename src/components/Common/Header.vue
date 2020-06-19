@@ -20,7 +20,8 @@
     				</form>
 				</div>
 				
-				<template v-if="$store.state.token === ''">
+				<!-- <template v-if="$store.state.token === ''"> -->
+				<template v-if="!checkLogin()">
 					<ul class="nav navbar-nav" v-for="(l, index) in login" :key="'info-'+index">
       					<li class="nav-item">
         					<a class="nav-link" style="color:white;" href="#" @click="navigate(`${l.url}`)">{{ l.name }}</a>
@@ -28,14 +29,22 @@
 					</ul>
 				</template>
 
-				<template v-if="$store.state.token !== ''">
+				<!-- <template v-if="$store.state.token !== ''"> -->
+				<template v-if="checkLogin()">
+					
 					<ul class="nav navbar-nav">
       					<li class="nav-item">
-        					<a class="nav-link" style="color:white;" href="#">个人中心</a>
+        					<el-dropdown>
+  								<span class="el-dropdown-link" style="color:white;font-size:16px;">
+    								{{name}}<i class="el-icon-arrow-down el-icon--right"></i>
+  								</span>
+  								<el-dropdown-menu slot="dropdown">
+    								<el-dropdown-item><a class="nav-link" style="color:black;" href="/user">个人中心</a></el-dropdown-item>
+    								<el-dropdown-item><a class="nav-link" style="color:black;" @click="logout()">注销</a></el-dropdown-item>
+  								</el-dropdown-menu>
+							</el-dropdown>
       					</li>
-						<li class="nav-item">
-        					<a class="nav-link" style="color:white;" href="#" @click="logout">注销</a>
-      					</li>
+						
 					</ul>
 				</template>
 			</b-collapse>
@@ -55,7 +64,8 @@ export default {
 				{ name: '案例库', url: '/case', icon: 'logo-octocat' },
 				// { name: '关于我们', url: '/', icon: 'md-beer' }
 			],
-			login: [{ name: '登录', url: '/login' }, { name: '注册', url: '/register' }]
+			login: [{ name: '登录', url: '/login' }, { name: '注册', url: '/register' }],
+			name: localStorage.getItem("name")
 		};
 	},
 	methods: {
@@ -64,9 +74,20 @@ export default {
 			this.$router.push({ path: data }).catch(data => {});
 		},
 		logout() {
-			this.$store.commit('LOGOUT');
-			this.$router.push({ name: 'Index' });
-			this.$emit('LOGOUT');
+			// this.$store.commit('LOGOUT');
+			// this.$router.push({ name: 'Index' });
+			// this.$emit('LOGOUT');
+			localStorage.removeItem('name')
+			localStorage.removeItem('password')
+			localStorage.removeItem('isLogin')
+			window.location.reload();
+		},
+		checkLogin(){
+			if(localStorage.getItem('isLogin')== 1){
+				return true
+			}else{
+				return false
+			}
 		}
 	},
 	computed: {

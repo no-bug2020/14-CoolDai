@@ -30,11 +30,13 @@ const routes = [{
 	path: '/publish',
 	name: 'Publish',
 	component: Publish,
+	meta:{auth:true}
 },
 {
 	path: '/publish/:type/release',
 	name: 'Release',
 	component: Release,
+	meta:{auth:true}
 },
 {
 	path:'/login',
@@ -43,11 +45,13 @@ const routes = [{
 },{
 	path:'/task',
 	name:'Task',
-	component:Task
+	component:Task,
+	meta:{auth:true}
 },{
 	path:'/task/certification',
 	name:'Certification',
-	component:Certification
+	component:Certification,
+	meta:{auth:true}
 },{
 	path:'/recommend',
 	name:'Recommend',
@@ -71,7 +75,8 @@ const routes = [{
 },{
 	path:'/user',
 	name:'User',
-	component:User
+	component:User,
+	meta:{auth:true}
 },{
 	path:'/programmer',
 	name:'ProgrammerList',
@@ -90,15 +95,27 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    const token= store.state.token ? store.state.token : window.sessionStorage.getItem("token");
-    if (to.meta.requireAuth &&!token) {
-        next({path: 'login'});
-    }
+    // const token= store.state.token ? store.state.token : window.sessionStorage.getItem("token");
+    // if (to.meta.requireAuth &&!token) {
+    //     next({path: 'login'});
+    // }
     // if (to.path==='/login'&&token!==""){
     //     next({Index});
-    // }
+	// }
+	
+	if(to.matched.some( m => m.meta.auth)){       
+		if(localStorage.getItem('isLogin')== 1) {       
+			next()   // 正常跳转到你设置好的页面     
+		}else{
+		　　 next({
+				path: "/login",
+				query: { redirect: to.fullPath }
+		  	})
+		} 
+	}else{
+		next() 
+	} 
 
-    next();
 });
 
 router.beforeEach((to,from ,next) => {

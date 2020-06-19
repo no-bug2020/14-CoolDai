@@ -32,35 +32,71 @@ export default {
 	},
 	methods: {
 		submitForm() {
-			this.axios({
-				url: this.globalUrl + 'login',
-				method: 'POST',
-				data: {
-					name: this.ruleForm.username,
-					password: this.ruleForm.password
-				},
-				dataType: 'JSONP',
-				headers: { 'Content-Type': 'application/json' }
-			})
-				.then(res => {
-					console.log(res);
-					if (res.status === 200) {
-						this.$store.commit('SET_TOKEN', res.data);
-						this.$router.push({ name: 'Index' });
-						this.$message({
-							message: '登陆成功',
-							type: 'success'
-						});
-					} else {
-						this.$message({
-							message: '登陆失败',
-							type: 'error'
-						});
-					}
-				})
-				.catch(error => {
-					this.$message.error('登陆异常');
-				});
+			if(this.ruleForm.phone == '12345678910' && this.ruleForm.validate == '123456' && this.ruleForm.password == 'password'){
+				localStorage.setItem("name",'user1');
+				localStorage.setItem("password","password");
+				localStorage.setItem("isLogin",1);
+				this.$message({
+          			showClose: true,
+          			message: '登录成功',
+          			type: 'success'
+        		});
+				var path = this.$route.query.redirect
+				console.log(this.$route.query)
+				if(!this.$route.query.hasOwnProperty("redirect")){
+					this.$router.push('/');
+				}else{
+					this.$router.push(path);
+				}
+				window.location.reload()
+			}else if(this.ruleForm.phone != '12345678910'){
+				this.$message({
+          			showClose: true,
+          			message: '手机号未注册',
+          			type: 'error'
+        		});
+			}else if(this.ruleForm.validate != '123456'){
+				this.$message({
+          			showClose: true,
+          			message: '验证码错误',
+          			type: 'error'
+        		});
+			}else if(this.ruleForm.password != 'password'){
+				this.$message({
+          			showClose: true,
+          			message: '密码错误',
+          			type: 'error'
+        		});
+			}
+		// 	this.axios({
+		// 		url: this.globalUrl + 'login',
+		// 		method: 'POST',
+		// 		data: {
+		// 			name: this.ruleForm.username,
+		// 			password: this.ruleForm.password
+		// 		},
+		// 		dataType: 'JSONP',
+		// 		headers: { 'Content-Type': 'application/json' }
+		// 	})
+		// 		.then(res => {
+		// 			console.log(res);
+		// 			if (res.status === 200) {
+		// 				this.$store.commit('SET_TOKEN', res.data);
+		// 				this.$router.push({ name: 'Index' });
+		// 				this.$message({
+		// 					message: '登陆成功',
+		// 					type: 'success'
+		// 				});
+		// 			} else {
+		// 				this.$message({
+		// 					message: '登陆失败',
+		// 					type: 'error'
+		// 				});
+		// 			}
+		// 		})
+		// 		.catch(error => {
+		// 			this.$message.error('登陆异常');
+		// 		});
 		}
 	}
 };
